@@ -5,9 +5,10 @@ import "./TopBar.css";
 
 interface TopBarProps {
   onMenuOpen: () => void;
+  onWorkOpen: () => void;
 }
 
-export function TopBar({ onMenuOpen }: TopBarProps) {
+export function TopBar({ onMenuOpen, onWorkOpen }: TopBarProps) {
   const time = useLocalClock();
   const navigate = useNavigate();
 
@@ -23,9 +24,14 @@ export function TopBar({ onMenuOpen }: TopBarProps) {
       <div className="top-bar__center font-display">
         ( MEL )&nbsp;&nbsp;{time}
       </div>
-      <button className="top-bar__menu font-display" onClick={onMenuOpen} type="button">
-        MENU
-      </button>
+      <div className="top-bar__right">
+        <button className="top-bar__work font-display" onClick={onWorkOpen} type="button">
+          WORK
+        </button>
+        <button className="top-bar__menu font-display" onClick={onMenuOpen} type="button">
+          MENU
+        </button>
+      </div>
     </header>
   );
 }

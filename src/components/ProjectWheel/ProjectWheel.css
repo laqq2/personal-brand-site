@@ -1,0 +1,257 @@
+.project-wheel {
+  position: relative;
+  width: min(380px, 88vw);
+  height: min(380px, 88vw);
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-wheel__ring {
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  border: 1px dashed color-mix(in srgb, var(--text) 18%, transparent);
+  pointer-events: none;
+}
+
+.project-wheel__spokes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.project-wheel__spoke {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1px;
+  height: 38%;
+  background: color-mix(in srgb, var(--text) 10%, transparent);
+  transform-origin: top center;
+}
+
+.project-wheel__spoke--top {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.project-wheel__spoke--left {
+  transform: translate(-50%, -100%) rotate(-90deg);
+}
+
+.project-wheel__spoke--right {
+  transform: translate(-50%, -100%) rotate(90deg);
+}
+
+.project-wheel__hub {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 72px;
+  height: 72px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid color-mix(in srgb, var(--text) 15%, transparent);
+  background: var(--surface);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  z-index: 2;
+}
+
+.project-wheel__portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.project-wheel__monogram {
+  display: none;
+}
+
+.project-wheel__nodes {
+  position: absolute;
+  inset: 0;
+}
+
+.project-wheel__node {
+  position: absolute;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  text-align: center;
+  color: var(--text);
+  z-index: 3;
+}
+
+.project-wheel__node-inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  border: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(6px);
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 200ms;
+  min-width: 120px;
+  max-width: 160px;
+}
+
+.project-wheel__node:hover .project-wheel__node-inner {
+  transform: scale(1.04);
+  border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.project-wheel__node--top {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.project-wheel__node--left {
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.project-wheel__node--right {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.project-wheel__strike {
+  position: absolute;
+  inset: -4px -8px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.project-wheel__strike .strikethrough-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.project-wheel__node-name {
+  position: relative;
+  z-index: 2;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.project-wheel__node-status {
+  position: relative;
+  z-index: 2;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--text) 8%, transparent);
+  color: color-mix(in srgb, var(--text) 55%, transparent);
+}
+
+.project-wheel__node-status--live {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  color: var(--text);
+}
+
+.project-wheel__node-tagline {
+  position: relative;
+  z-index: 2;
+  font-size: 10px;
+  line-height: 1.35;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms, max-height 200ms;
+  color: color-mix(in srgb, var(--text) 65%, transparent);
+}
+
+.project-wheel__node:hover .project-wheel__node-tagline {
+  opacity: 1;
+  max-height: 48px;
+}
+
+.project-wheel__all {
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  opacity: 0.5;
+  transition: opacity 200ms;
+  z-index: 4;
+  white-space: nowrap;
+}
+
+.project-wheel__all:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .project-wheel {
+    width: min(340px, 92vw);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 8px;
+  }
+
+  .project-wheel__ring,
+  .project-wheel__spokes {
+    display: none;
+  }
+
+  .project-wheel__hub {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 64px;
+    height: 64px;
+  }
+
+  .project-wheel__nodes {
+    position: relative;
+    inset: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .project-wheel__node {
+    position: relative;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  .project-wheel__node-inner {
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .project-wheel__node-tagline {
+    opacity: 0.65;
+    max-height: 48px;
+  }
+
+  .project-wheel__all {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 4px;
+  }
+}

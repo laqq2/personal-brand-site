@@ -5,6 +5,8 @@ import { ThemeProvider } from "./hooks/useTheme";
 import App from "./App";
 import "./styles/globals.css";
 import "./components/IntroLoader/IntroLoader.css";
+import "./components/SectionLoader/SectionLoader.css";
+import "./components/ProjectWheel/ProjectWheel.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>

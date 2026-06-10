@@ -1,5 +1,6 @@
 export interface Project {
   name: string;
+  tagline: string;
   desc: string;
   meta?: string;
   status: "LIVE" | "HACKATHON";
@@ -34,6 +35,7 @@ export const CONTACT = {
 export const PROJECTS: Project[] = [
   {
     name: "LockonAI",
+    tagline: "AI tutor for VCE Maths — marks work in under 30s",
     desc: "AI tutor for VCE Maths. Trained on 2,800+ VCAA questions — generates personalised practice targeting your exact weaknesses, using active recall and spaced repetition. Built solo in 30 days.",
     meta: "2,800+ questions · active recall · weakness targeting",
     status: "LIVE",
@@ -41,12 +43,14 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "LumePath",
+    tagline: "Safety-first pedestrian routing by ambient light",
     desc: "Safety-first pedestrian routing for Clayton. Routes by ambient light data, not speed. Built at hackathon.",
     status: "HACKATHON",
     href: "https://lumepath-gold.vercel.app/",
   },
   {
     name: "Focal",
+    tagline: "Chrome extension for deep focus & reflection",
     desc: "Chrome extension productivity tool. Focus timer, distraction logging, task management, and Google Calendar sync — built around Kolb's Reflection Cycle and iCanStudy principles. Weekly reflection, goal setting, and prioritisation baked in.",
     meta: "Kolb's reflection · iCanStudy principles · Google Calendar API",
     status: "LIVE",
@@ -54,7 +58,8 @@ export const PROJECTS: Project[] = [
   },
   {
     name: "Personal Brand Site",
-    desc: "This site. Steven.com-inspired motion design with a terminal iris hero — type-driven, immersive, zero clutter.",
+    tagline: "Project wheel portfolio — motion-driven, type-first",
+    desc: "This site. Motion-driven personal brand with a project wheel hero — type-first, immersive, zero clutter.",
     status: "LIVE",
     href: "#",
   },

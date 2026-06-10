@@ -11,8 +11,8 @@ interface MenuPanelProps {
 }
 
 const NAV_ITEMS: { id: SectionId; isRoute: boolean }[] = [
-  { id: "about", isRoute: false },
   { id: "building", isRoute: true },
+  { id: "about", isRoute: false },
   { id: "story", isRoute: true },
   { id: "stack", isRoute: true },
   { id: "now", isRoute: true },
@@ -94,7 +94,7 @@ export function MenuPanel({ open, onClose, onAboutOpen }: MenuPanelProps) {
               <a href={`mailto:${BRAND.email}`}>Email</a>
             </div>
             <p className="menu-credits">
-              © 2026 Evan · Built with React + Vite + Rive
+              © 2026 Evan · Built with React + Vite
             </p>
           </div>
         </div>

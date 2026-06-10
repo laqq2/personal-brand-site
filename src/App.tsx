@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
-import { HeroTerminal } from "./components/HeroTerminal/HeroTerminal";
+import { ProjectWheel } from "./components/ProjectWheel/ProjectWheel";
 import { TopBar } from "./components/TopBar/TopBar";
 import { MenuPanel, ContentPanel } from "./components/MenuPanel/MenuPanel";
 import { CTAButton } from "./components/CTAButton/CTAButton";
 import { ThemeToggle } from "./components/ThemeToggle/ThemeToggle";
 import { PageTransition } from "./components/PageTransition/PageTransition";
-import { ScrollStage } from "./components/ScrollStage/ScrollStage";
-import { AppProvider, useApp } from "./hooks/useAppContext";
+import { AppProvider } from "./hooks/useAppContext";
 import { IntroProvider, useIntro } from "./hooks/useIntroContext";
 import { AboutContent } from "./pages/AboutContent";
 import { BuildingContent } from "./pages/BuildingContent";
@@ -58,9 +57,10 @@ function RoutePanelInner({
 }
 
 function AppInner() {
+  const navigate = useNavigate();
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
-  const { scrollProgress, triggerEcosystem, isMobile } = useApp();
+  const { contentVisible } = useIntro();
   const location = useLocation();
 
   useEffect(() => {
@@ -68,33 +68,28 @@ function AppInner() {
     setAboutOpen(false);
   }, [location.pathname]);
 
-  const handleCta = () => {
-    triggerEcosystem();
-    setAboutOpen(true);
-  };
-
   const isHome = location.pathname === "/";
-  const showScrollHint = scrollProgress < 0.05 && !isMobile && isHome;
 
   return (
     <div className="app-shell">
       <div className="vignette" aria-hidden="true" />
       <div className="grain" aria-hidden="true" />
-      <ScrollStage />
-      <TopBar onMenuOpen={() => setMenuOpen(true)} />
+      <TopBar
+        onMenuOpen={() => setMenuOpen(true)}
+        onWorkOpen={() => navigate("/building")}
+      />
       <div className="hero-stage">
-        <HeroTerminal />
+        {contentVisible && <ProjectWheel />}
       </div>
 
-      {isHome && <HeroTagline />}
+      {isHome && contentVisible && <HeroTagline />}
 
       <div className="hero-bottom">
-        <CTAButton onClick={handleCta} />
+        <CTAButton
+          label="View Work"
+          onClick={() => navigate("/building")}
+        />
       </div>
-
-      {showScrollHint && (
-        <span className="scroll-hint scroll-hint--center font-display">Scroll</span>
-      )}
 
       <ThemeToggle />
       <MenuPanel
