@@ -1,0 +1,46 @@
+:root,
+.theme-light {
+  --bg: #e8eaeb;
+  --surface: #ffffff;
+  --text: #0a0a0a;
+  --muted: #666666;
+  --faint: #d4d6d8;
+  --hairline: #c8cacc;
+  --accent: #6fff00;
+  --panel-bg: #ffffff;
+  --panel-dim: rgba(10, 10, 10, 0.35);
+  --terminal-body: linear-gradient(145deg, #e8e8e8 0%, #b8b8b8 50%, #d0d0d0 100%);
+  --terminal-text: #333333;
+  --terminal-ring: #666666;
+  --intro-bg: #ffffff;
+  --intro-text: #0a0a0a;
+  --cta-bg: #ffffff;
+  --cta-text: #0a0a0a;
+  --toggle-bg: #0a0a0a;
+  --toggle-knob: #ffffff;
+  --vignette: radial-gradient(ellipse at center, transparent 35%, rgba(0, 0, 0, 0.15) 100%);
+  --grain-opacity: 0.035;
+}
+
+.theme-dark {
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --text: #ededed;
+  --muted: #888888;
+  --faint: #1a1a1a;
+  --hairline: #1e1e1e;
+  --accent: #6fff00;
+  --panel-bg: #ffffff;
+  --panel-dim: rgba(0, 0, 0, 0.72);
+  --terminal-body: linear-gradient(145deg, #1a1a1a 0%, #0a0a0a 50%, #151515 100%);
+  --terminal-text: #ededed;
+  --terminal-ring: #cccccc;
+  --intro-bg: #ffffff;
+  --intro-text: #0a0a0a;
+  --cta-bg: #ffffff;
+  --cta-text: #0a0a0a;
+  --toggle-bg: #ededed;
+  --toggle-knob: #0a0a0a;
+  --vignette: radial-gradient(ellipse at center, transparent 30%, rgba(0, 0, 0, 0.65) 100%);
+  --grain-opacity: 0.05;
+}
