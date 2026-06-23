@@ -1,10 +1,15 @@
 # Personal Brand Site
 
-> Steven.com-inspired immersive portfolio — terminal iris hero, scroll-jacked motion, slide panels.
+Original dark editorial portfolio at `/` (April 2026). Motion / Steven-inspired revamp preserved at **`/studio`**.
 
-Vite + React + TypeScript site with Rive, Lenis, and React Router.
+## Routes
 
-## Design system
+| URL | Version |
+|-----|---------|
+| `/` | Original single-page site — neon green, DM Serif, scroll sections |
+| `/studio` | Vite + React motion site — project wheel, panels, theme toggle |
+
+## Design system (studio)
 
 - **Identity**: EVAN•DEV with bullet-dot brand mark
 - **Default theme**: Dark (pure black `#000000`)
@@ -12,19 +17,9 @@ Vite + React + TypeScript site with Rive, Lenis, and React Router.
 - **Accent**: `#6FFF00` neon green
 - **Section colors**: Building (red), Story (green), Stack (blue), Now (gold)
 
-## Stack
+## Stack (studio)
 
-React 18 · Vite · TypeScript · Lenis · @rive-app/react-canvas · React Router
-
-## Rive asset
-
-Build `terminal-iris.riv` using [public/animations/RIVE_BUILD_GUIDE.md](public/animations/RIVE_BUILD_GUIDE.md), then drop it in `public/animations/`.
-
-```bash
-npm run verify:rive   # check file + list input contract
-```
-
-Until the `.riv` file exists, a CSS fallback renders the iris with your uploaded images.
+React 19 · Vite · TypeScript · React Router
 
 ## Development
 
@@ -33,8 +28,11 @@ npm install
 npm run dev
 ```
 
-Clear `localStorage.evan-theme` in devtools if you want to reset to dark default.
+- `http://localhost:5173/` — original site
+- `http://localhost:5173/studio` — motion version
+
+Clear `localStorage.evan-theme` in devtools if you want to reset to dark default on studio.
 
 ## Live
 
-[evanbuilds.vercel.app](https://evanbuilds.vercel.app)
+[evanbuilds.vercel.app](https://evanbuilds.vercel.app) · [studio](https://evanbuilds.vercel.app/studio)

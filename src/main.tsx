@@ -10,7 +10,7 @@ import "./components/ProjectWheel/ProjectWheel.css";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/studio">
       <ThemeProvider>
         <App />
       </ThemeProvider>
